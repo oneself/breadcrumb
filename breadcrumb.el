@@ -740,6 +740,15 @@ If POS is nil, use current buffer location."
     (bury-buffer))
 )
 
+(defun toggle-read-only (f)
+  "Toggle the read-only status of the current buffer based on the
+value of f. If f is 1, make the buffer read-only. If f is 0,
+make the buffer writable."
+  (interactive "P")
+  (if (equal f 0)
+      (read-only-mode -1)
+    (read-only-mode 1)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
